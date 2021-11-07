@@ -15,27 +15,7 @@ Group support Student: https://www.facebook.com/groups/communityuni/
 Install-Package SAprioriModel -ProjectName YourProject
 ```
 
-# Model class diagram for Sales database:
 
-![alt text](https://raw.githubusercontent.com/thanhtd32/SAprioriSystem/main/Images/SalesModelClass.png)
-
-Mapping JSon Data with Model class:
-|# | Dataset | Model class |Description| 
-|:---:|:---:|:---:|:---:| 
-|1 | Customer.json | SAprioriCustomer | List of Customer dataset|
-|2 | Employee.json | SAprioriEmployee | List of Employee dataset|
-|3 | Category.json | SAprioriCategory | List of Category dataset|
-|4 | Product.json | SAprioriProduct | List of Product dataset|
-|5 | Order.json | SAprioriOrder | List of Order dataset|
-|6 | OrderDetails.json | SAprioriOrderDetail | List of OrderDetails dataset|
-
-Example ORM mapping SAprioriEmployee with Employee.json:
-![alt text](https://raw.githubusercontent.com/thanhtd32/SAprioriSystem/main/Images/EmployeORM.png)
-
-# Model class diagram for SApriori engine:
-![alt text](https://raw.githubusercontent.com/thanhtd32/SAprioriSystem/main/Images/SAprioriEngine.png)
-
-SApriori algorithm processing center is located in class SAprioriEngine, All data is loaded into SAprioriDatabase object, data can be filtered by season (Spring, summer, Autumn, Winter, thanksgiving, Christmas...) or select query by time, according to the number of accesses. The model will provide many data query methods to run the algorithm. The SAprioriEngine object provides the runSAprioriModel function to find association rules, the result returned is the SAprioriResult object. The SAprioriResult object contains the set of rules stored in the SAprioriRule object, the SAprioriRule object stores the detailed results of each component after the SApriori algorithm completes, relying on this class to represent the data.
 
 # Example with smalldataset - C# code
 Download https://github.com/thanhtd32/SAprioriSystem/tree/main/dataset/smalldataset and save it into local file.
