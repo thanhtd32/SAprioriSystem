@@ -25,7 +25,7 @@ foreach (SAprioriRule arule in result.StrongRules)
 }
 ```
 Result:
-```
+```C#
 [Vinamilk --> String Strawberry 100.00%] 
 [Vinamilk --> Hamburger 66.67%] 
 [Vinamilk --> Hamburger,String Strawberry 66.67%] 
