@@ -33,6 +33,8 @@ Mapping JSon Data with Model class:
 Example ORM mapping SAprioriEmployee with Employee.json:
 ![alt text](https://raw.githubusercontent.com/thanhtd32/SAprioriSystem/main/Images/EmployeORM.png)
 
+# Model class diagram for SApriori engine:
+![alt text](https://raw.githubusercontent.com/thanhtd32/SAprioriSystem/main/Images/SAprioriEngine.png)
 
 # Example with smalldataset - C# code
 Download https://github.com/thanhtd32/SAprioriSystem/tree/main/dataset/smalldataset and save it into local file.
