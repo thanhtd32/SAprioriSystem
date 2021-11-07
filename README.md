@@ -20,6 +20,16 @@ Install-Package SAprioriModel -ProjectName YourProject
 
 ![alt text](https://raw.githubusercontent.com/thanhtd32/SAprioriSystem/main/Images/SalesModelClass.png)
 
+Mapping JSon Data with Model class:
+|# | Dataset | Model class |Description| 
+|:---:|:---:|:---:|:---:| 
+|1 | Customer.json | SAprioriCustomer | List of Customer dataset|
+|2 | Employee.json | SAprioriEmployee | List of Employee dataset|
+|3 | Category.json | SAprioriCategory | List of Category dataset|
+|4 | Product.json | SAprioriProduct | List of Product dataset|
+|5 | Order.json | SAprioriOrder | List of Order dataset|
+|6 | OrderDetails.json | SAprioriOrderDetail | List of OrderDetails dataset|
+
 # Example with smalldataset - C# code
 Download https://github.com/thanhtd32/SAprioriSystem/tree/main/dataset/smalldataset and save it into local file.
 
