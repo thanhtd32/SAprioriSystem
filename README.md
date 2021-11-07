@@ -36,6 +36,8 @@ Example ORM mapping SAprioriEmployee with Employee.json:
 # Model class diagram for SApriori engine:
 ![alt text](https://raw.githubusercontent.com/thanhtd32/SAprioriSystem/main/Images/SAprioriEngine.png)
 
+SApriori algorithm processing center is located in class SAprioriEngine, All data is loaded into SAprioriDatabase object, data can be filtered by season (Spring, summer, Autumn, Winter, thanksgiving, Christmas...) or select query by time, according to the number of accesses. The model will provide many data query methods to run the algorithm. The SAprioriEngine object provides the runSAprioriModel function to find association rules, the result returned is the SAprioriResult object. The SAprioriResult object contains the set of rules stored in the SAprioriRule object, the SAprioriRule object stores the detailed results of each component after the SApriori algorithm completes, relying on this class to represent the data.
+
 # Example with smalldataset - C# code
 Download https://github.com/thanhtd32/SAprioriSystem/tree/main/dataset/smalldataset and save it into local file.
 
