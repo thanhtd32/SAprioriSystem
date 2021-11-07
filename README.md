@@ -16,3 +16,38 @@ foreach (SAprioriRule arule in result.StrongRules)
     Console.WriteLine(s);
 }
 ```
+Result:
+```
+[Vinamilk --> String Strawberry 100.00%] 
+[Vinamilk --> Hamburger 66.67%] 
+[Vinamilk --> Hamburger,String Strawberry 66.67%] 
+[Vinamilk,Hamburger --> String Strawberry 100.00%] 
+[Vinamilk,String Strawberry --> Hamburger 66.67%] 
+[Hamburger --> G7 Coffee,Bien Hoa Sugar 50.00%] 
+[Hamburger --> Bien Hoa Sugar 50.00%] 
+[Hamburger --> G7 Coffee,String Strawberry 50.00%] 
+[Hamburger --> String Strawberry 75.00%] 
+[Hamburger --> G7 Coffee 75.00%] 
+[Hamburger --> Vinamilk,String Strawberry 50.00%] 
+[Hamburger --> Vinamilk 50.00%] 
+[Hamburger,G7 Coffee --> Bien Hoa Sugar 66.67%] 
+[Hamburger,G7 Coffee --> String Strawberry 66.67%] 
+[Hamburger,String Strawberry --> G7 Coffee 66.67%] 
+[Hamburger,String Strawberry --> Vinamilk 66.67%] 
+[Hamburger,Bien Hoa Sugar --> G7 Coffee 100.00%] 
+[G7 Coffee --> Hamburger 100.00%] 
+[G7 Coffee --> Hamburger,String Strawberry 66.67%] 
+[G7 Coffee --> String Strawberry 66.67%] 
+[G7 Coffee --> Hamburger,Bien Hoa Sugar 66.67%] 
+[G7 Coffee --> Bien Hoa Sugar 66.67%] 
+[G7 Coffee,String Strawberry --> Hamburger 100.00%] 
+[G7 Coffee,Bien Hoa Sugar --> Hamburger 100.00%] 
+[String Strawberry --> Vinamilk 75.00%] 
+[String Strawberry --> Vinamilk,Hamburger 50.00%] 
+[String Strawberry --> Hamburger 75.00%] 
+[String Strawberry --> G7 Coffee 50.00%] 
+[String Strawberry --> Hamburger,G7 Coffee 50.00%] 
+[Bien Hoa Sugar --> Hamburger 100.00%] 
+[Bien Hoa Sugar --> G7 Coffee 100.00%] 
+[Bien Hoa Sugar --> Hamburger,G7 Coffee 100.00%] 
+```
