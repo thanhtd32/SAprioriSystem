@@ -62,3 +62,162 @@ Result:
 [Bien Hoa Sugar --> G7 Coffee 100.00%] 
 [Bien Hoa Sugar --> Hamburger,G7 Coffee 100.00%] 
 ```
+# Example with largedataset - C# code
+Download https://github.com/thanhtd32/SAprioriSystem/tree/main/dataset/largedataset and save it into local file.
+
+largedataset folder has:
+- Category.json
+- Customer.json
+- Employee.json
+- Order.json
+- OrderDetails.json
+- Product.json
+
+You call LoadDatabase("largedataset") like code is shown as below:
+```C#
+SAprioriDatabase database = new SAprioriDatabase();
+database.LoadDatabase("largedataset");
+DateTime from = new DateTime(2011, 5, 1);
+DateTime to= new DateTime(2011, 5, 31);
+database.FilterOrders(from,to, true);
+SAprioriEngine sApriori = new SAprioriEngine();
+double minSupport = 20;
+double minConfident = 80;
+SAprioriResult result = sApriori.runSAprioriModel(database, minSupport, minConfident);
+
+foreach (SAprioriRule arule in result.StrongRules)
+{
+    string s = "[" + arule.X_Results_Description + " --> " + arule.Y_Results_Description + " " + String.Format("{0:0.00}", (arule.Confidence * 100)) + "%] " + "\r\n";
+    Console.WriteLine(s);
+}
+```
+Result:
+```C#
+[Sport-100 Helmet, Red --> Sport-100 Helmet, Black,Long-Sleeve Logo Jersey, L 81.82%] 
+[Sport-100 Helmet, Red --> Sport-100 Helmet, Black,AWC Logo Cap,Long-Sleeve Logo Jersey, L 81.82%] 
+[Sport-100 Helmet, Red --> AWC Logo Cap,Long-Sleeve Logo Jersey, L 90.91%] 
+[Sport-100 Helmet, Red --> Sport-100 Helmet, Black,AWC Logo Cap 81.82%] 
+[Sport-100 Helmet, Red --> AWC Logo Cap 90.91%] 
+[Sport-100 Helmet, Red --> Sport-100 Helmet, Blue,AWC Logo Cap,Long-Sleeve Logo Jersey, L 81.82%] 
+[Sport-100 Helmet, Red --> Sport-100 Helmet, Blue,Long-Sleeve Logo Jersey, L 81.82%] 
+[Sport-100 Helmet, Red --> Long-Sleeve Logo Jersey, L 90.91%] 
+[Sport-100 Helmet, Red --> Sport-100 Helmet, Blue 81.82%] 
+[Sport-100 Helmet, Red --> Sport-100 Helmet, Blue,AWC Logo Cap 81.82%] 
+[Sport-100 Helmet, Red --> Sport-100 Helmet, Black 90.91%] 
+[Sport-100 Helmet, Red,Sport-100 Helmet, Black --> AWC Logo Cap 90.00%] 
+[Sport-100 Helmet, Red,Sport-100 Helmet, Black --> Long-Sleeve Logo Jersey, L 90.00%] 
+[Sport-100 Helmet, Red,Sport-100 Helmet, Black --> AWC Logo Cap,Long-Sleeve Logo Jersey, L 90.00%] 
+[Sport-100 Helmet, Red,Sport-100 Helmet, Black --> AWC Logo Cap,Long-Sleeve Logo Jersey, L 90.00%] 
+[Sport-100 Helmet, Red,Sport-100 Helmet, Black,AWC Logo Cap --> Long-Sleeve Logo Jersey, L 100.00%] 
+[Sport-100 Helmet, Red,Sport-100 Helmet, Black,Long-Sleeve Logo Jersey, L --> AWC Logo Cap 100.00%] 
+[Sport-100 Helmet, Red,Sport-100 Helmet, Blue --> AWC Logo Cap 100.00%] 
+[Sport-100 Helmet, Red,Sport-100 Helmet, Blue --> AWC Logo Cap,Long-Sleeve Logo Jersey, L 100.00%] 
+[Sport-100 Helmet, Red,Sport-100 Helmet, Blue --> AWC Logo Cap,Long-Sleeve Logo Jersey, L 100.00%] 
+[Sport-100 Helmet, Red,Sport-100 Helmet, Blue --> Long-Sleeve Logo Jersey, L 100.00%] 
+[Sport-100 Helmet, Red,Sport-100 Helmet, Blue,AWC Logo Cap --> Long-Sleeve Logo Jersey, L 100.00%] 
+[Sport-100 Helmet, Red,Sport-100 Helmet, Blue,Long-Sleeve Logo Jersey, L --> AWC Logo Cap 100.00%] 
+[Sport-100 Helmet, Red,AWC Logo Cap --> Sport-100 Helmet, Blue 90.00%] 
+[Sport-100 Helmet, Red,AWC Logo Cap --> Sport-100 Helmet, Blue,Long-Sleeve Logo Jersey, L 90.00%] 
+[Sport-100 Helmet, Red,AWC Logo Cap --> Sport-100 Helmet, Black,Long-Sleeve Logo Jersey, L 90.00%] 
+[Sport-100 Helmet, Red,AWC Logo Cap --> Sport-100 Helmet, Black 90.00%] 
+[Sport-100 Helmet, Red,AWC Logo Cap --> Sport-100 Helmet, Black,Long-Sleeve Logo Jersey, L 90.00%] 
+[Sport-100 Helmet, Red,AWC Logo Cap --> Sport-100 Helmet, Blue,Long-Sleeve Logo Jersey, L 90.00%] 
+[Sport-100 Helmet, Red,AWC Logo Cap --> Long-Sleeve Logo Jersey, L 100.00%] 
+[Sport-100 Helmet, Red,AWC Logo Cap,Long-Sleeve Logo Jersey, L --> Sport-100 Helmet, Black 90.00%] 
+[Sport-100 Helmet, Red,AWC Logo Cap,Long-Sleeve Logo Jersey, L --> Sport-100 Helmet, Blue 90.00%] 
+[Sport-100 Helmet, Red,Long-Sleeve Logo Jersey, L --> AWC Logo Cap 100.00%] 
+[Sport-100 Helmet, Red,Long-Sleeve Logo Jersey, L --> Sport-100 Helmet, Blue 90.00%] 
+[Sport-100 Helmet, Red,Long-Sleeve Logo Jersey, L --> Sport-100 Helmet, Black,AWC Logo Cap 90.00%] 
+[Sport-100 Helmet, Red,Long-Sleeve Logo Jersey, L --> Sport-100 Helmet, Black 90.00%] 
+[Sport-100 Helmet, Red,Long-Sleeve Logo Jersey, L --> Sport-100 Helmet, Black,AWC Logo Cap 90.00%] 
+[Sport-100 Helmet, Red,Long-Sleeve Logo Jersey, L --> Sport-100 Helmet, Blue,AWC Logo Cap 90.00%] 
+[Sport-100 Helmet, Red,Long-Sleeve Logo Jersey, L --> Sport-100 Helmet, Blue,AWC Logo Cap 90.00%] 
+[Sport-100 Helmet, Black --> AWC Logo Cap 84.62%] 
+[Sport-100 Helmet, Black --> Sport-100 Helmet, Blue 84.62%] 
+[Sport-100 Helmet, Black --> Long-Sleeve Logo Jersey, L 84.62%] 
+[Sport-100 Helmet, Black --> AWC Logo Cap,Long-Sleeve Logo Jersey, L 84.62%] 
+[Sport-100 Helmet, Black,Sport-100 Helmet, Blue --> AWC Logo Cap,Long-Sleeve Logo Jersey, L 90.91%] 
+[Sport-100 Helmet, Black,Sport-100 Helmet, Blue --> AWC Logo Cap,Long-Sleeve Logo Jersey, L 90.91%] 
+[Sport-100 Helmet, Black,Sport-100 Helmet, Blue --> AWC Logo Cap 90.91%] 
+[Sport-100 Helmet, Black,Sport-100 Helmet, Blue --> Long-Sleeve Logo Jersey, L 90.91%] 
+[Sport-100 Helmet, Black,Sport-100 Helmet, Blue,AWC Logo Cap --> Long-Sleeve Logo Jersey, L 100.00%] 
+[Sport-100 Helmet, Black,Sport-100 Helmet, Blue,Long-Sleeve Logo Jersey, L --> AWC Logo Cap 100.00%] 
+[Sport-100 Helmet, Black,AWC Logo Cap --> Sport-100 Helmet, Red,Long-Sleeve Logo Jersey, L 81.82%] 
+[Sport-100 Helmet, Black,AWC Logo Cap --> Sport-100 Helmet, Red,Long-Sleeve Logo Jersey, L 81.82%] 
+[Sport-100 Helmet, Black,AWC Logo Cap --> Sport-100 Helmet, Blue 90.91%] 
+[Sport-100 Helmet, Black,AWC Logo Cap --> Long-Sleeve Logo Jersey, L 100.00%] 
+[Sport-100 Helmet, Black,AWC Logo Cap --> Sport-100 Helmet, Blue,Long-Sleeve Logo Jersey, L 90.91%] 
+[Sport-100 Helmet, Black,AWC Logo Cap --> Sport-100 Helmet, Red 81.82%] 
+[Sport-100 Helmet, Black,AWC Logo Cap --> Sport-100 Helmet, Blue,Long-Sleeve Logo Jersey, L 90.91%] 
+[Sport-100 Helmet, Black,AWC Logo Cap,Long-Sleeve Logo Jersey, L --> Sport-100 Helmet, Blue 90.91%] 
+[Sport-100 Helmet, Black,AWC Logo Cap,Long-Sleeve Logo Jersey, L --> Sport-100 Helmet, Red 81.82%] 
+[Sport-100 Helmet, Black,Long-Sleeve Logo Jersey, L --> Sport-100 Helmet, Red,AWC Logo Cap 81.82%] 
+[Sport-100 Helmet, Black,Long-Sleeve Logo Jersey, L --> Sport-100 Helmet, Blue,AWC Logo Cap 90.91%] 
+[Sport-100 Helmet, Black,Long-Sleeve Logo Jersey, L --> AWC Logo Cap 100.00%] 
+[Sport-100 Helmet, Black,Long-Sleeve Logo Jersey, L --> Sport-100 Helmet, Red 81.82%] 
+[Sport-100 Helmet, Black,Long-Sleeve Logo Jersey, L --> Sport-100 Helmet, Blue 90.91%] 
+[Sport-100 Helmet, Black,Long-Sleeve Logo Jersey, L --> Sport-100 Helmet, Red,AWC Logo Cap 81.82%] 
+[Sport-100 Helmet, Black,Long-Sleeve Logo Jersey, L --> Sport-100 Helmet, Blue,AWC Logo Cap 90.91%] 
+[Sport-100 Helmet, Blue --> Long-Sleeve Logo Jersey, L 84.62%] 
+[Sport-100 Helmet, Blue --> Sport-100 Helmet, Black 84.62%] 
+[Sport-100 Helmet, Blue --> AWC Logo Cap,Long-Sleeve Logo Jersey, L 84.62%] 
+[Sport-100 Helmet, Blue --> AWC Logo Cap 92.31%] 
+[Sport-100 Helmet, Blue,AWC Logo Cap --> Sport-100 Helmet, Black,Long-Sleeve Logo Jersey, L 83.33%] 
+[Sport-100 Helmet, Blue,AWC Logo Cap --> Sport-100 Helmet, Black 83.33%] 
+[Sport-100 Helmet, Blue,AWC Logo Cap --> Sport-100 Helmet, Black,Long-Sleeve Logo Jersey, L 83.33%] 
+[Sport-100 Helmet, Blue,AWC Logo Cap --> Long-Sleeve Logo Jersey, L 91.67%] 
+[Sport-100 Helmet, Blue,AWC Logo Cap,Long-Sleeve Logo Jersey, L --> Sport-100 Helmet, Black 90.91%] 
+[Sport-100 Helmet, Blue,AWC Logo Cap,Long-Sleeve Logo Jersey, L --> Sport-100 Helmet, Red 81.82%] 
+[Sport-100 Helmet, Blue,Long-Sleeve Logo Jersey, L --> AWC Logo Cap 100.00%] 
+[Sport-100 Helmet, Blue,Long-Sleeve Logo Jersey, L --> Sport-100 Helmet, Red,AWC Logo Cap 81.82%] 
+[Sport-100 Helmet, Blue,Long-Sleeve Logo Jersey, L --> Sport-100 Helmet, Red,AWC Logo Cap 81.82%] 
+[Sport-100 Helmet, Blue,Long-Sleeve Logo Jersey, L --> Sport-100 Helmet, Black,AWC Logo Cap 90.91%] 
+[Sport-100 Helmet, Blue,Long-Sleeve Logo Jersey, L --> Sport-100 Helmet, Red 81.82%] 
+[Sport-100 Helmet, Blue,Long-Sleeve Logo Jersey, L --> Sport-100 Helmet, Black,AWC Logo Cap 90.91%] 
+[Sport-100 Helmet, Blue,Long-Sleeve Logo Jersey, L --> Sport-100 Helmet, Black 90.91%] 
+[AWC Logo Cap --> Sport-100 Helmet, Blue 85.71%] 
+[AWC Logo Cap --> Long-Sleeve Logo Jersey, L 92.86%] 
+[AWC Logo Cap,Long-Sleeve Logo Jersey, L --> Sport-100 Helmet, Black 84.62%] 
+[AWC Logo Cap,Long-Sleeve Logo Jersey, L --> Sport-100 Helmet, Blue 84.62%] 
+[Long-Sleeve Logo Jersey, L --> AWC Logo Cap 86.67%] 
+[LL Road Frame - Red, 60 --> Road-650 Black, 52 90.00%] 
+[LL Road Frame - Red, 60 --> Road-650 Red, 60 90.00%] 
+[LL Road Frame - Red, 60 --> Road-450 Red, 52 90.00%] 
+[LL Road Frame - Red, 60 --> LL Road Frame - Black, 52 90.00%] 
+[LL Road Frame - Red, 60 --> Road-450 Red, 52,Road-650 Red, 60 90.00%] 
+[LL Road Frame - Red, 60,Road-450 Red, 52 --> Road-650 Red, 60 100.00%] 
+[LL Road Frame - Red, 60,Road-650 Red, 60 --> Road-450 Red, 52 100.00%] 
+[LL Road Frame - Black, 52 --> Road-450 Red, 52 90.00%] 
+[LL Road Frame - Black, 52 --> LL Road Frame - Red, 60 90.00%] 
+[LL Road Frame - Black, 52 --> Road-650 Red, 44 90.00%] 
+[Road-450 Red, 58 --> Road-650 Black, 52 81.82%] 
+[Road-450 Red, 58 --> Road-650 Red, 44 81.82%] 
+[Road-450 Red, 58 --> Road-450 Red, 52 81.82%] 
+[Road-450 Red, 52,Road-650 Red, 60 --> Road-650 Red, 44 81.82%] 
+[Road-450 Red, 52,Road-650 Red, 60 --> Road-650 Red, 44,Road-650 Black, 52 81.82%] 
+[Road-450 Red, 52,Road-650 Red, 60 --> Road-650 Red, 44,Road-650 Black, 52 81.82%] 
+[Road-450 Red, 52,Road-650 Red, 60 --> Road-650 Black, 52 90.91%] 
+[Road-450 Red, 52,Road-650 Red, 60 --> LL Road Frame - Red, 60 81.82%] 
+[Road-450 Red, 52,Road-650 Red, 60,Road-650 Red, 44 --> Road-650 Black, 52 100.00%] 
+[Road-450 Red, 52,Road-650 Red, 60,Road-650 Black, 52 --> Road-650 Red, 44 90.00%] 
+[Road-450 Red, 52,Road-650 Red, 44 --> Road-650 Black, 52 83.33%] 
+[Road-450 Red, 52,Road-650 Red, 44,Road-650 Black, 52 --> Road-650 Red, 60 90.00%] 
+[Road-450 Red, 52,Road-650 Black, 52 --> Road-650 Red, 60 90.91%] 
+[Road-450 Red, 52,Road-650 Black, 52 --> Road-650 Red, 60,Road-650 Red, 44 81.82%] 
+[Road-450 Red, 52,Road-650 Black, 52 --> Road-650 Red, 60,Road-650 Red, 44 81.82%] 
+[Road-450 Red, 52,Road-650 Black, 52 --> Road-650 Red, 44 90.91%] 
+[Road-650 Red, 60 --> Road-650 Black, 52 85.71%] 
+[Road-650 Red, 60,Road-650 Red, 44 --> Road-450 Red, 52 100.00%] 
+[Road-650 Red, 60,Road-650 Red, 44 --> Road-450 Red, 52,Road-650 Black, 52 100.00%] 
+[Road-650 Red, 60,Road-650 Red, 44 --> Road-650 Black, 52 100.00%] 
+[Road-650 Red, 60,Road-650 Red, 44 --> Road-450 Red, 52,Road-650 Black, 52 100.00%] 
+[Road-650 Red, 60,Road-650 Red, 44,Road-650 Black, 52 --> Road-450 Red, 52 100.00%] 
+[Road-650 Red, 60,Road-650 Black, 52 --> Road-450 Red, 52 83.33%] 
+[Road-650 Red, 44 --> Road-450 Red, 52 85.71%] 
+[Road-650 Red, 44,Road-650 Black, 52 --> Road-450 Red, 52 90.91%] 
+[Road-650 Red, 44,Road-650 Black, 52 --> Road-450 Red, 52,Road-650 Red, 60 81.82%] 
+[Road-650 Red, 44,Road-650 Black, 52 --> Road-450 Red, 52,Road-650 Red, 60 81.82%] 
+[Road-650 Red, 44,Road-650 Black, 52 --> Road-650 Red, 60 81.82%] 
+[Road-650 Black, 52 --> Road-650 Red, 60 85.71%] 
+
+```
