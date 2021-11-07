@@ -1,0 +1,38 @@
+﻿[
+  {
+    "ProductID": 1,
+    "Name": "Vinamilk",
+    "ProductNumber": "",
+    "CategoryID": 1
+  },
+  {
+    "ProductID": 2,
+    "Name": "Hamburger",
+    "ProductNumber": "",
+    "CategoryID": 2
+  },
+  {
+    "ProductID": 3,
+    "Name": "G7 Coffee",
+    "ProductNumber": "",
+    "CategoryID": 3
+  },
+  {
+    "ProductID": 4,
+    "Name": "String Strawberry",
+    "ProductNumber": "",
+    "CategoryID": 5
+  },
+  {
+    "ProductID": 5,
+    "Name": "Bien Hoa Sugar",
+    "ProductNumber": "",
+    "CategoryID": 4
+  },
+  {
+    "ProductID": 6,
+    "Name": "Vina Coffee",
+    "ProductNumber": "",
+    "CategoryID": 3
+  }
+]

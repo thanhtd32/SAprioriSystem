@@ -1,0 +1,22 @@
+﻿[
+  {
+    "CategoryID": 1,
+    "Name": "Milk"
+  },
+  {
+    "CategoryID": 2,
+    "Name": "Bread"
+  },
+  {
+    "CategoryID": 3,
+    "Name": "Coffee"
+  },
+  {
+    "CategoryID": 4,
+    "Name": "Sugar"
+  },
+  {
+    "CategoryID": 5,
+    "Name": "Sparkling Water\r\n"
+  }
+]

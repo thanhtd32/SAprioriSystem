@@ -1,0 +1,20 @@
+﻿[
+  {
+    "CustomerID": 1,
+    "FirstName": "Pham Thi Xuan Dieu",
+    "MiddleName": null,
+    "LastName": null
+  },
+  {
+    "CustomerID": 2,
+    "FirstName": "Tran Pham Man Nhi",
+    "MiddleName": null,
+    "LastName": null
+  },
+  {
+    "CustomerID": 3,
+    "FirstName": "Tran Pham Thanh Tra",
+    "MiddleName": null,
+    "LastName": null
+  }
+]

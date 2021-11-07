@@ -1,0 +1,15 @@
+﻿[
+  {
+    "EmployeeID": 1,
+    "FirstName": "Thanh",
+    "MiddleName": "Duy",
+    "LastName": "Tran"
+  },
+  {
+    "EmployeeID": 2,
+    "FirstName": "Jun",
+    "MiddleName": "Ho",
+    "LastName": "Huh"
+  }
+]
+
