@@ -2,7 +2,7 @@
 SApriori Engine to Predict the seasonal consumption behavior of consumers based on Object Relational Mapping model and S-Apriori algorithm
 
 ```diff
-- I will update all source code for this Project soon... in red
+- I will update all source code for this Project soon... 
 ```
 
 #install nuget package
