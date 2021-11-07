@@ -15,6 +15,11 @@ Group support Student: https://www.facebook.com/groups/communityuni/
 ```C#
 Install-Package SAprioriModel -ProjectName YourProject
 ```
+
+# Model class diagram for Sale database:
+
+![alt text](https://raw.githubusercontent.com/thanhtd32/SAprioriSystem/main/Images/SalesModelClass.png)
+
 # Example with smalldataset - C# code
 Download https://github.com/thanhtd32/SAprioriSystem/tree/main/dataset/smalldataset and save it into local file.
 
