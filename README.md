@@ -3,7 +3,7 @@ SApriori Engine to Predict the seasonal consumption behavior of consumers based 
 # Example with smalldataset - C# code
 Download https://github.com/thanhtd32/SAprioriSystem/tree/main/dataset/smalldataset and save it into local file.
 
-This folder has:
+smalldataset folder has:
 - Category.json
 - Customer.json
 - Employee.json
@@ -11,7 +11,7 @@ This folder has:
 - OrderDetails.json
 - Product.json
 
-
+You call LoadDatabase("smalldataset") like code is shown as below:
 ```C#
 SAprioriDatabase database = new SAprioriDatabase();
 database.LoadDatabase("smalldataset");
