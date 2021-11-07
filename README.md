@@ -7,9 +7,6 @@ Blog study coding: https://duythanhcse.wordpress.com/
 
 Group support Student: https://www.facebook.com/groups/communityuni/
 
-```diff
-- I will update all source code for this Project soon... 
-```
 
 # Install nuget package
 ```C#
