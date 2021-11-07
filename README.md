@@ -15,14 +15,14 @@ smalldataset folder has:
 - OrderDetails.json
 - Product.json
 
-# | Dataset | Number of objects |Description 
---- | --- | --- | --- 
-1 | Customer.json | 3 | List of Customer data
-2 | Employee.json | 2 | List of Employee data
-3 | Category.json | 5 | List of Category data
-4 | Product.json | 6 | List of Product data
-5 | Order.json | 5 | List of Order data
-6 | OrderDetails.json | 16 | List of OrderDetails data
+|# | Dataset | Number of objects |Description| 
+|:---:|:---:|:---:|:---:| 
+|1 | Customer.json | 3 | List of Customer data|
+|2 | Employee.json | 2 | List of Employee data|
+|3 | Category.json | 5 | List of Category data|
+|4 | Product.json | 6 | List of Product data|
+|5 | Order.json | 5 | List of Order data|
+|6 | OrderDetails.json | 16 | List of OrderDetails data|
 
 
 You call LoadDatabase("smalldataset") like code is shown as below:
