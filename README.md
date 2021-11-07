@@ -3,6 +3,10 @@ SApriori Engine to Predict the seasonal consumption behavior of consumers based 
 
 Any question, please free to contact me: thanhtd@uel.edu.vn
 
+Blog study coding: https://duythanhcse.wordpress.com/
+
+Group support Student: https://www.facebook.com/groups/communityuni/
+
 ```diff
 - I will update all source code for this Project soon... 
 ```
