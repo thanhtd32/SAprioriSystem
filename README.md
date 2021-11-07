@@ -9,7 +9,7 @@ Employee.json
 Order.json
 OrderDetails.json
 Product.json
-```
+```C#
 SAprioriDatabase database = new SAprioriDatabase();
 database.LoadDatabase("smalldataset");
 database.FilterOrders(100, true);
