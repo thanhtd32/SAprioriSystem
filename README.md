@@ -5,7 +5,7 @@ SApriori Engine to Predict the seasonal consumption behavior of consumers based 
 - I will update all source code for this Project soon... 
 ```
 
-#install nuget package
+# install nuget package
 ```C#
 Install-Package SAprioriModel -ProjectName YourProject
 ```
