@@ -79,6 +79,8 @@ Result:
 # Example with largedataset - C# code
 Download https://github.com/thanhtd32/SAprioriSystem/tree/main/dataset/largedataset and save it into local file.
 
+Large Dataset AdventureWorks2017, I converted to json
+
 largedataset folder has:
 - Category.json
 - Customer.json
@@ -86,6 +88,15 @@ largedataset folder has:
 - Order.json
 - OrderDetails.json
 - Product.json
+
+|# | Dataset | Number of objects |Description| 
+|:---:|:---:|:---:|:---:| 
+|1 | Customer.json | 19119 | List of Customer data|
+|2 | Employee.json | 17 | List of Employee data|
+|3 | Category.json | 37 | List of Category data|
+|4 | Product.json | 504 | List of Product data|
+|5 | Order.json | 31465 | List of Order data|
+|6 | OrderDetails.json | 121317 | List of OrderDetails data|
 
 You call LoadDatabase("largedataset") like code is shown as below:
 ```C#
