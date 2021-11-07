@@ -11,12 +11,12 @@ Group support Student: https://www.facebook.com/groups/communityuni/
 - I will update all source code for this Project soon... 
 ```
 
-# install nuget package
+# Install nuget package
 ```C#
 Install-Package SAprioriModel -ProjectName YourProject
 ```
 
-# Model class diagram for Sale database:
+# Model class diagram for Sales database:
 
 ![alt text](https://raw.githubusercontent.com/thanhtd32/SAprioriSystem/main/Images/SalesModelClass.png)
 
@@ -29,6 +29,10 @@ Mapping JSon Data with Model class:
 |4 | Product.json | SAprioriProduct | List of Product dataset|
 |5 | Order.json | SAprioriOrder | List of Order dataset|
 |6 | OrderDetails.json | SAprioriOrderDetail | List of OrderDetails dataset|
+
+Example ORM mapping SAprioriEmployee with Employee.json:
+![alt text](https://raw.githubusercontent.com/thanhtd32/SAprioriSystem/main/Images/EmployeORM.png)
+
 
 # Example with smalldataset - C# code
 Download https://github.com/thanhtd32/SAprioriSystem/tree/main/dataset/smalldataset and save it into local file.
