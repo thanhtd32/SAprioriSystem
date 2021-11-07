@@ -1,5 +1,9 @@
 # SAprioriSystem
 SApriori Engine to Predict the seasonal consumption behavior of consumers based on Object Relational Mapping model and S-Apriori algorithm
+#install nuget package
+```C#
+Install-Package SAprioriModel -ProjectName YourProject
+```
 # Example with smalldataset - C# code
 Download https://github.com/thanhtd32/SAprioriSystem/tree/main/dataset/smalldataset and save it into local file.
 
