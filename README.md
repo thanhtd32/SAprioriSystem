@@ -321,3 +321,17 @@ static void Main(string[] args)
             Console.ReadLine();
         }
 ```
+# Some example GUI for filtering data and SAprior:
+
+GUI for filtering season
+
+![alt text](https://raw.githubusercontent.com/thanhtd32/SAprioriSystem/main/Images/FilterSeasonDataset.PNG)
+
+GUI for SApriori
+
+![alt text](https://raw.githubusercontent.com/thanhtd32/SAprioriSystem/main/Images/SAprioriSeasonDataset.PNG)
+
+Export Excel function
+
+![alt text](https://raw.githubusercontent.com/thanhtd32/SAprioriSystem/main/Images/ExportExcelSAprioriSeasonDataset.PNG)
+
