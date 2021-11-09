@@ -288,3 +288,36 @@ Result:
 [Road-650 Black, 52 --> Road-650 Red, 60 85.71%] 
 
 ```
+# Example with largedataset - C# code - filter season
+
+
+```
+static void Main(string[] args)
+        {
+            //create SAprioriDatabase object
+            SAprioriDatabase database = new SAprioriDatabase();
+            //define season, it depends on the region of dataset collecting
+            database.addSeason(SAprioriSeason.Spring, new List<int>() { 3, 4, 5 });
+            database.addSeason(SAprioriSeason.Summer, new List<int>() { 6, 7, 8 });
+            database.addSeason(SAprioriSeason.Autumn, new List<int>() { 9, 10, 11 });
+            database.addSeason(SAprioriSeason.Winter, new List<int>() { 12, 1, 2 });
+            //call LoadDatabase method, largedataset is folder stores 6 json file
+            database.LoadDatabase("largedataset");
+            int year = 2011;
+            //filter dataset by sesaon
+            database.FilterOrders(SAprioriSeason.Spring, year, true);
+
+            //run SApriori
+            SAprioriEngine sApriori = new SAprioriEngine();
+            double minSupport = 20;
+            double minConfident = 80;
+            SAprioriResult result = sApriori.runSAprioriModel(database, minSupport, minConfident);
+
+            foreach (SAprioriRule arule in result.StrongRules)
+            {
+                string s = "[" + arule.X_Results_Description + " --> " + arule.Y_Results_Description + " " + String.Format("{0:0.00}", (arule.Confidence * 100)) + "%] " + "\r\n";
+                Console.WriteLine(s);
+            }
+            Console.ReadLine();
+        }
+```
