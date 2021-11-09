@@ -291,7 +291,7 @@ Result:
 # Example with largedataset - C# code - filter season
 
 
-```
+```C#
 static void Main(string[] args)
         {
             //create SAprioriDatabase object
