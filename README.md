@@ -333,5 +333,18 @@ GUI for SApriori
 
 Export Excel function
 
+```C#
+SAprioriExcel aprioriExcel = new SAprioriExcel();
+saveFileDialog1.Filter = "Excel 2007-2015|*.xlsx|Excel 2003(*.xls)|*.xls";
+if (saveFileDialog1.ShowDialog()==DialogResult.OK)
+{
+    bool result= aprioriExcel.ExportStrongRulesToExcel(sApriori, saveFileDialog1.FileName);
+    if(result==true)
+    {
+        //Export excel sucessfully
+    }
+}               
+```
+
 ![alt text](https://raw.githubusercontent.com/thanhtd32/SAprioriSystem/main/Images/ExportExcelSAprioriSeasonDataset.PNG)
 
