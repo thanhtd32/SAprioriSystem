@@ -1,5 +1,5 @@
 # SAprioriSystem
-SApriori Engine to Predict the seasonal consumption behavior of consumers based on Object Relational Mapping model and S-Apriori algorithm.
+SApriori Engine to Predict the seasonal consumption behavior of consumers based on Object Relational Mapping model and S-Apriori algorithm, support to export rules into Excel
 
 This Research from KMOU (Korea Maritime & Ocean University) - Data Science Lab - Room 407.
 
