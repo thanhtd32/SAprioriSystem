@@ -338,8 +338,8 @@ SAprioriExcel aprioriExcel = new SAprioriExcel();
 saveFileDialog1.Filter = "Excel 2007-2015|*.xlsx|Excel 2003(*.xls)|*.xls";
 if (saveFileDialog1.ShowDialog()==DialogResult.OK)
 {
-    bool result= aprioriExcel.ExportStrongRulesToExcel(sApriori, saveFileDialog1.FileName);
-    if(result==true)
+    bool x= aprioriExcel.ExportStrongRulesToExcel(sApriori, saveFileDialog1.FileName);
+    if(x==true)
     {
         //Export excel sucessfully
     }
