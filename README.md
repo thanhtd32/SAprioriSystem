@@ -121,7 +121,7 @@ Result:
 # Example with largedataset - C# code
 Download https://github.com/thanhtd32/SAprioriSystem/tree/main/dataset/largedataset and save it into local file.
 
-Large Dataset AdventureWorks2017, I converted to json
+Large Dataset AdventureWorks2017 (https://docs.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver15&tabs=ssms), I converted the large dataset to json
 
 largedataset folder has:
 - Category.json
