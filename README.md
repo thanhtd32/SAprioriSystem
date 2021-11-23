@@ -114,7 +114,7 @@ foreach (SAprioriRule arule in result.StrongRules)
 }
 ```
 
-#B. Dataset is in local machine: Create DemoSApriori .net core >=5.0 project C# code
+# B. Dataset is in local machine: Create DemoSApriori .net core >=5.0 project C# code
 Copy 2 dataset as below:
 
 ![alt text](https://raw.githubusercontent.com/thanhtd32/SAprioriSystem/main/Images/CopyDataset.PNG)
