@@ -1,5 +1,5 @@
 # SAprioriSystem
-SApriori Engine to Predict the seasonal consumption behavior of consumers based on Object Relational Mapping model and S-Apriori algorithm, support to export rules into Excel
+SApriori Engine to Predict the seasonal consumption behavior of consumers based on Object Relational Mapping model and S-Apriori algorithm, load dataset from github or local, support export the rules into Excel
 
 This Research from KMOU (Korea Maritime & Ocean University) - Data Science Lab - Room 407.
 
@@ -41,7 +41,39 @@ Example ORM mapping SAprioriEmployee with Employee.json:
 
 SApriori algorithm processing center is located in class SAprioriEngine, All data is loaded into SAprioriDatabase object, data can be filtered by season (Spring, summer, Autumn, Winter, thanksgiving, Christmas...) or select query by time, according to the number of accesses. The model will provide many data query methods to run the algorithm. The SAprioriEngine object provides the runSAprioriModel function to find association rules, the result returned is the SAprioriResult object. The SAprioriResult object contains the set of rules stored in the SAprioriRule object, the SAprioriRule object stores the detailed results of each component after the SApriori algorithm completes, relying on this class to represent the data.
 
-# Create DemoSApriori .net core >=3.1 project C# code
+# Dataset is on Server, such as github: Create DemoSApriori .net core >=5.0 project C# code
+```C#
+using SAprioriModel;
+using System;
+
+namespace TestLoadDatabaseOnCloud
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            SAprioriDatabase database = new SAprioriDatabase();
+            //string linkFolderDataset = "https://raw.githubusercontent.com/thanhtd32/SAprioriSystem/main/dataset/smalldataset/";
+            string linkFolderDataset = "https://raw.githubusercontent.com/thanhtd32/SAprioriSystem/main/dataset/largedataset/";
+            database.LoadDatabaseOnCloud(linkFolderDataset);
+            Console.WriteLine("-----------List Of Customers:---------");
+            foreach(SAprioriCustomer cust in database.Customers)
+            {
+                Console.WriteLine(cust.CustomerID+ " " + cust.FirstName + " " + cust.MiddleName + " " + cust.LastName);
+            }
+            Console.WriteLine("-----------List Of Products:-------------------");
+            foreach(SAprioriProduct product in database.Products)
+            {
+                Console.WriteLine(product.ProductID+" "+product.Name);
+            }
+            Console.ReadLine();
+        }
+    }
+}
+
+```
+
+# Dataset is in local machine: Create DemoSApriori .net core >=5.0 project C# code
 Copy 2 dataset as below:
 
 ![alt text](https://raw.githubusercontent.com/thanhtd32/SAprioriSystem/main/Images/CopyDataset.PNG)
