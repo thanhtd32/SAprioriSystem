@@ -41,7 +41,7 @@ Example ORM mapping SAprioriEmployee with Employee.json:
 
 SApriori algorithm processing center is located in class SAprioriEngine, All data is loaded into SAprioriDatabase object, data can be filtered by season (Spring, summer, Autumn, Winter, thanksgiving, Christmas...) or select query by time, according to the number of accesses. The model will provide many data query methods to run the algorithm. The SAprioriEngine object provides the runSAprioriModel function to find association rules, the result returned is the SAprioriResult object. The SAprioriResult object contains the set of rules stored in the SAprioriRule object, the SAprioriRule object stores the detailed results of each component after the SApriori algorithm completes, relying on this class to represent the data.
 
-# Dataset is on Server, such as github: Create DemoSApriori .net core >=5.0 project C# code
+# A. Dataset is on Server, such as github: Create DemoSApriori .net core >=5.0 project C# code
 ```C#
 using SAprioriModel;
 using System;
@@ -72,9 +72,49 @@ namespace TestLoadDatabaseOnCloud
 }
 
 ```
-And you will use the SApriori Algorithm exactly the same in the local machine that I explain below:
+And you will use the SApriori Algorithm exactly the same in the local machine that I explain below.
 
-# Dataset is in local machine: Create DemoSApriori .net core >=5.0 project C# code
+With Small dataset on cloud:
+
+```C#
+SAprioriDatabase database = new SAprioriDatabase();
+string linkFolderDataset = "https://raw.githubusercontent.com/thanhtd32/SAprioriSystem/main/dataset/smalldataset/";
+database.LoadDatabaseOnCloud(linkFolderDataset);
+database.FilterOrders(100, true);
+SAprioriEngine sApriori = new SAprioriEngine();
+double minSupport = 40;
+double minConfident = 50;
+SAprioriResult result = sApriori.runSAprioriModel(database, minSupport, minConfident);
+
+foreach (SAprioriRule arule in result.StrongRules)
+{
+    string s = "[" + arule.X_Results_Description + " --> " + arule.Y_Results_Description + " " + String.Format("{0:0.00}", (arule.Confidence * 100)) + "%] "+"\r\n";
+    Console.WriteLine(s);
+}
+```
+
+With large dataset on cloud:
+
+```C#
+SAprioriDatabase database = new SAprioriDatabase();
+string linkFolderDataset = "https://raw.githubusercontent.com/thanhtd32/SAprioriSystem/main/dataset/largedataset/";
+database.LoadDatabaseOnCloud(linkFolderDataset);
+DateTime from = new DateTime(2011, 5, 1);
+DateTime to= new DateTime(2011, 5, 31);
+database.FilterOrders(from,to, true);
+SAprioriEngine sApriori = new SAprioriEngine();
+double minSupport = 20;
+double minConfident = 80;
+SAprioriResult result = sApriori.runSAprioriModel(database, minSupport, minConfident);
+
+foreach (SAprioriRule arule in result.StrongRules)
+{
+    string s = "[" + arule.X_Results_Description + " --> " + arule.Y_Results_Description + " " + String.Format("{0:0.00}", (arule.Confidence * 100)) + "%] " + "\r\n";
+    Console.WriteLine(s);
+}
+```
+
+#B. Dataset is in local machine: Create DemoSApriori .net core >=5.0 project C# code
 Copy 2 dataset as below:
 
 ![alt text](https://raw.githubusercontent.com/thanhtd32/SAprioriSystem/main/Images/CopyDataset.PNG)
