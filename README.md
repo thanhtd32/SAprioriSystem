@@ -72,6 +72,7 @@ namespace TestLoadDatabaseOnCloud
 }
 
 ```
+And you will use the SApriori Algorithm exactly the same in the local machine that I explain below:
 
 # Dataset is in local machine: Create DemoSApriori .net core >=5.0 project C# code
 Copy 2 dataset as below:
