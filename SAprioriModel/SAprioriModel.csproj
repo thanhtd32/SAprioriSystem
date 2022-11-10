@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PrivacyPreservingFilter.cs" />
     <Compile Include="Secret.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SAprioriCategory.cs" />

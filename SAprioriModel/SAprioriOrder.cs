@@ -15,9 +15,9 @@ namespace SAprioriModel
     /// </summary>
     public class SAprioriOrder
     {
-        public int OrderID { get; set; }
+        public string OrderID { get; set; }
         public DateTime OrderDate { get; set; }
-        public int CustomerID { get; set; }
+        public string CustomerID { get; set; }
         public int EmployeeID { get; set; }
         [JsonIgnore]
         public List<SAprioriOrderDetail> OrderDetails { get; set; }
