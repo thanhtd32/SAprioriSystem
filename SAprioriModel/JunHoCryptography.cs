@@ -8,13 +8,13 @@ namespace SAprioriModel
 {
     public class JunHoCryptography : Secret
     {
-        public override string decrypt(string decryptedText, string key)
+        public override string decrypt(string encryptedText, string key)
         {
             String res = "";
-            key = expandedKey(key, decryptedText);
-            for (int i = 0, j = 0; i < decryptedText.Length; i++)
+            key = expandedKey(key, encryptedText);
+            for (int i = 0, j = 0; i < encryptedText.Length; i++)
             {
-                int d = decryptedText[i];
+                int d = encryptedText[i];
                 int k = key[j] - 65;
                 if (d == 45) res += " ";
                 else if (d >= 65 && d <= 90)
