@@ -18,6 +18,8 @@ namespace SAprioriModel
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }
+        public bool IsDataPrivacy { get; set; }
+        public bool IsTransactionPrivacy { get; set; }
         [JsonIgnore]
         public List<SAprioriOrder> Orders { get; set; }
     }
