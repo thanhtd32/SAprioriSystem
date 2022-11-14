@@ -1,0 +1,10 @@
+D:\TranDuyThanh\Papers\Ideas-papers\Apriori _ORM\SAprioriSystem\SAprioriModel\bin\Debug\SAprioriModel.dll
+D:\TranDuyThanh\Papers\Ideas-papers\Apriori _ORM\SAprioriSystem\SAprioriModel\bin\Debug\SAprioriModel.pdb
+D:\TranDuyThanh\Papers\Ideas-papers\Apriori _ORM\SAprioriSystem\SAprioriModel\bin\Debug\Newtonsoft.Json.dll
+D:\TranDuyThanh\Papers\Ideas-papers\Apriori _ORM\SAprioriSystem\SAprioriModel\bin\Debug\Newtonsoft.Json.xml
+D:\TranDuyThanh\Papers\Ideas-papers\Apriori _ORM\SAprioriSystem\SAprioriModel\obj\Debug\SAprioriModel.csproj.AssemblyReference.cache
+D:\TranDuyThanh\Papers\Ideas-papers\Apriori _ORM\SAprioriSystem\SAprioriModel\obj\Debug\SAprioriModel.csproj.ResolveComReference.cache
+D:\TranDuyThanh\Papers\Ideas-papers\Apriori _ORM\SAprioriSystem\SAprioriModel\obj\Debug\SAprioriModel.csproj.CoreCompileInputs.cache
+D:\TranDuyThanh\Papers\Ideas-papers\Apriori _ORM\SAprioriSystem\SAprioriModel\obj\Debug\SAprioriModel.csproj.CopyComplete
+D:\TranDuyThanh\Papers\Ideas-papers\Apriori _ORM\SAprioriSystem\SAprioriModel\obj\Debug\SAprioriModel.dll
+D:\TranDuyThanh\Papers\Ideas-papers\Apriori _ORM\SAprioriSystem\SAprioriModel\obj\Debug\SAprioriModel.pdb

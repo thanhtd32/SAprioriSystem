@@ -70,7 +70,7 @@ namespace SAprioriModel
 
             return result;
         }
-        public string HiddenText(string s,char mask,double hiddenPercent,bool random=true)
+        public string HiddenText(string s,char mask,double hiddenPercent, HiddenMode mode=HiddenMode.Random)
         {
             char[] arr = s.ToCharArray();
             int nHidden=(int)(arr.Length* hiddenPercent/100);
@@ -83,7 +83,7 @@ namespace SAprioriModel
             }
             else
             {
-                if (random == true)
+                if (mode ==HiddenMode.Random)
                 {
                     Random rd = new Random();
                     HashSet<int> set = new HashSet<int>();
@@ -97,12 +97,39 @@ namespace SAprioriModel
                         arr[i] = mask;
                     }
                 }
-                else
+                else if(mode ==HiddenMode.LeftToRight)
                 {
                     for (int i = 0; i < nHidden; i++)
                     {
                         arr[i] = mask;
                     }                    
+                }
+                else if (mode == HiddenMode.RightToLeft)
+                {
+                    int i = arr.Length-1;
+                    int count = 0;
+                    while(count <= nHidden)
+                    {
+                        arr[i--] = mask;
+                        count++;
+                    }
+                }
+                else if(mode==HiddenMode.Center)
+                {
+                    int c = arr.Length / 2;
+                    int half = nHidden / 2;
+                    int i = c;
+                    for (; i <= c+ half; i++)
+                    {
+                        arr[i] = mask;
+                    }
+                    int count = 0;
+                    i = c-1;
+                    while (count <= half)
+                    {
+                        arr[i--] = mask;
+                        count++;
+                    }
                 }
             }
             return new string(arr);

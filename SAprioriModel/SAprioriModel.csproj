@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HiddenMode.cs" />
     <Compile Include="PrivacyPreservingFilter.cs" />
     <Compile Include="Secret.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -63,7 +64,7 @@
     <Compile Include="SAprioriResult.cs" />
     <Compile Include="SAprioriRule.cs" />
     <Compile Include="SAprioriSeason.cs" />
-    <Compile Include="JunHoCryptography.cs" />
+    <Compile Include="ThanhAndHuhCryptography.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ic_407.ico" />
