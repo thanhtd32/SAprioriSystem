@@ -8,7 +8,7 @@ namespace SAprioriModel
 {
     public  class PrivacyPreservingFilter
     {
-        JunHoCryptography junHoCryptography = new JunHoCryptography();
+        ThanhAndHuhCryptography junHoCryptography = new ThanhAndHuhCryptography();
         string KEY = "SERECT";
         public void CustomerDataPrivacy(SAprioriCustomer customer, string[] features)
         {            
@@ -17,7 +17,7 @@ namespace SAprioriModel
                 if (features.Contains(prop.Name))
                 {
                     string original = prop.GetValue(customer, null).ToString();
-                    string encryptedProp = junHoCryptography.encrypt(KEY, original);
+                    string encryptedProp = junHoCryptography.Encrypt(KEY, original);
                     prop.SetValue(customer, encryptedProp);
                 }
             }            
@@ -40,7 +40,7 @@ namespace SAprioriModel
                 if (features.Contains(prop.Name))
                 {
                     string original = prop.GetValue(order, null).ToString();
-                    string encryptedProp = junHoCryptography.encrypt(KEY, original);
+                    string encryptedProp = junHoCryptography.Encrypt(KEY, original);
                     prop.SetValue(order, encryptedProp);
                 }
             }
@@ -60,7 +60,7 @@ namespace SAprioriModel
                 if (features.Contains(prop.Name))
                 {
                     string original = prop.GetValue(orderDetail, null).ToString();
-                    string encryptedProp = junHoCryptography.encrypt(KEY, original);
+                    string encryptedProp = junHoCryptography.Encrypt(KEY, original);
                     prop.SetValue(orderDetail, encryptedProp);
                 }
             }
