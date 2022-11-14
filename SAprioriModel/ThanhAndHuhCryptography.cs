@@ -7,38 +7,11 @@ using System.Threading.Tasks;
 namespace SAprioriModel
 {
     public class ThanhAndHuhCryptography : Secret
-    {
+    {       
         public override string Decrypt(string encryptedText, string key)
         {
             String res = "";
             key = ExpandedKey(key, encryptedText);
-            for (int i = 0, j = 0; i < encryptedText.Length; i++)
-            {
-                int d = encryptedText[i];
-                int k = key[j] - 65;
-                res += (char)(d - k);
-                j = ++j % key.Length;
-            }
-            return res;
-        }
-
-        public override string Encrypt(string originalText, string key)
-        {
-            key = ExpandedKey(key, originalText);
-            String res = "";
-            for (int i = 0, j = 0; i < originalText.Length; i++)
-            {
-                int c = originalText[i];
-                int k = key[j] - 65;
-                res += (char)(c + k);
-                j = ++j % key.Length;
-            }
-            return res;
-        }
-        /*public override string decrypt(string encryptedText, string key)
-        {
-            String res = "";
-            key = expandedKey(key, encryptedText);
             for (int i = 0, j = 0; i < encryptedText.Length; i++)
             {
                 int d = encryptedText[i];
@@ -56,9 +29,9 @@ namespace SAprioriModel
             return res;
         }
 
-        public override string encrypt(string originalText, string key)
+        public override string Encrypt(string originalText, string key)
         {
-            key = expandedKey(key, originalText);
+            key = ExpandedKey(key, originalText);
             String res = "";
             for (int i = 0, j = 0; i < originalText.Length; i++)
             {
@@ -75,7 +48,7 @@ namespace SAprioriModel
                 j = ++j % key.Length;
             }
             return res;
-        }*/
+        }
         public double Entropy(string s)
         {
             var map = new Dictionary<char, int>();
