@@ -33,7 +33,7 @@ namespace SAprioriModel
         {
             CustomerDataPrivacy(database.Customers, features);
         }
-        public void CustomerSalesTransactionPrivacy(SAprioriOrder order, string[] features)
+        public void CustomerTransactionPrivacy(SAprioriOrder order, string[] features)
         {
             foreach (var prop in order.GetType().GetProperties())
             {
@@ -44,16 +44,16 @@ namespace SAprioriModel
                     prop.SetValue(order, encryptedProp);
                 }
             }
-            CustomerSalesTransactionPrivacy(order.OrderDetails, features);
+            CustomerTransactionPrivacy(order.OrderDetails, features);
         }
-        public void CustomerSalesTransactionPrivacy(List<SAprioriOrderDetail> orderDetails, string[] features)
+        public void CustomerTransactionPrivacy(List<SAprioriOrderDetail> orderDetails, string[] features)
         {
             foreach (SAprioriOrderDetail orderDetail in orderDetails)
             {
-                CustomerSalesTransactionPrivacy(orderDetail, features);
+                CustomerTransactionPrivacy(orderDetail, features);
             }
         }
-        public void CustomerSalesTransactionPrivacy(SAprioriOrderDetail orderDetail, string[] features)
+        public void CustomerTransactionPrivacy(SAprioriOrderDetail orderDetail, string[] features)
         {
             foreach (var prop in orderDetail.GetType().GetProperties())
             {
@@ -65,11 +65,11 @@ namespace SAprioriModel
                 }
             }
         }
-        public void CustomerSalesTransactionPrivacy(SAprioriCustomer customers, string[] features)
+        public void CustomerTransactionPrivacy(SAprioriCustomer customers, string[] features)
         {
             foreach (SAprioriOrder order in customers.Orders)
             {
-                CustomerSalesTransactionPrivacy(order, features);
+                CustomerTransactionPrivacy(order, features);
             }
         }
     }
