@@ -1,0 +1,150 @@
+﻿[
+  {
+    "CategoryID": 1,
+    "Name": "Mountain Bikes"
+  },
+  {
+    "CategoryID": 2,
+    "Name": "Road Bikes"
+  },
+  {
+    "CategoryID": 3,
+    "Name": "Touring Bikes"
+  },
+  {
+    "CategoryID": 4,
+    "Name": "Handlebars"
+  },
+  {
+    "CategoryID": 5,
+    "Name": "Bottom Brackets"
+  },
+  {
+    "CategoryID": 6,
+    "Name": "Brakes"
+  },
+  {
+    "CategoryID": 7,
+    "Name": "Chains"
+  },
+  {
+    "CategoryID": 8,
+    "Name": "Cranksets"
+  },
+  {
+    "CategoryID": 9,
+    "Name": "Derailleurs"
+  },
+  {
+    "CategoryID": 10,
+    "Name": "Forks"
+  },
+  {
+    "CategoryID": 11,
+    "Name": "Headsets"
+  },
+  {
+    "CategoryID": 12,
+    "Name": "Mountain Frames"
+  },
+  {
+    "CategoryID": 13,
+    "Name": "Pedals"
+  },
+  {
+    "CategoryID": 14,
+    "Name": "Road Frames"
+  },
+  {
+    "CategoryID": 15,
+    "Name": "Saddles"
+  },
+  {
+    "CategoryID": 16,
+    "Name": "Touring Frames"
+  },
+  {
+    "CategoryID": 17,
+    "Name": "Wheels"
+  },
+  {
+    "CategoryID": 18,
+    "Name": "Bib-Shorts"
+  },
+  {
+    "CategoryID": 19,
+    "Name": "Caps"
+  },
+  {
+    "CategoryID": 20,
+    "Name": "Gloves"
+  },
+  {
+    "CategoryID": 21,
+    "Name": "Jerseys"
+  },
+  {
+    "CategoryID": 22,
+    "Name": "Shorts"
+  },
+  {
+    "CategoryID": 23,
+    "Name": "Socks"
+  },
+  {
+    "CategoryID": 24,
+    "Name": "Tights"
+  },
+  {
+    "CategoryID": 25,
+    "Name": "Vests"
+  },
+  {
+    "CategoryID": 26,
+    "Name": "Bike Racks"
+  },
+  {
+    "CategoryID": 27,
+    "Name": "Bike Stands"
+  },
+  {
+    "CategoryID": 28,
+    "Name": "Bottles and Cages"
+  },
+  {
+    "CategoryID": 29,
+    "Name": "Cleaners"
+  },
+  {
+    "CategoryID": 30,
+    "Name": "Fenders"
+  },
+  {
+    "CategoryID": 31,
+    "Name": "Helmets"
+  },
+  {
+    "CategoryID": 32,
+    "Name": "Hydration Packs"
+  },
+  {
+    "CategoryID": 33,
+    "Name": "Lights"
+  },
+  {
+    "CategoryID": 34,
+    "Name": "Locks"
+  },
+  {
+    "CategoryID": 35,
+    "Name": "Panniers"
+  },
+  {
+    "CategoryID": 36,
+    "Name": "Pumps"
+  },
+  {
+    "CategoryID": 37,
+    "Name": "Tires and Tubes"
+  }
+]
