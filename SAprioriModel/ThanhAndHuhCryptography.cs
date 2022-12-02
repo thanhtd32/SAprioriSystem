@@ -23,6 +23,10 @@ namespace SAprioriModel
                 else if (d >= 97 && d <= 122)
                     if ((d - k) < 97) res += (char)(d - k + 26);
                     else res += (char)(d - k);
+                else if (d >= 48 && d <= 57)
+                {
+                    res += numbers[int.Parse((char)d+"")];
+                }
                 else res += (char)(d);
                 j = ++j % key.Length;
             }
@@ -44,9 +48,37 @@ namespace SAprioriModel
                 else if (c >= 97 && c <= 122)
                     if ((c + k) > 122) res += (char)(c + k - 26);
                     else res += (char)(c + k);
+                else if (c >= 48 && c <= 57)
+                {
+                    res += (c%10);
+                }
                 else res += (char)(c);
                 j = ++j % key.Length;
             }
+            return res;
+        }
+        public string Encrypt(string originalText, string key,int securityLoop)
+        {
+            SecurityLoops.Clear();
+            string res = Encrypt(originalText, key);
+            SecurityLoops.Add(res);
+            for (int i=1;i<securityLoop;i++)
+            {
+                res=Encrypt(res, key);
+                SecurityLoops.Add(res);
+            }
+            return res;
+        }
+        public string Decrypt(string encryptedText, string key, int securityLoop)
+        {
+            SecurityLoops.Clear();
+            String res = Decrypt(encryptedText, key);
+            SecurityLoops.Add(encryptedText);
+            for (int i = 1; i < securityLoop; i++)
+            {
+                SecurityLoops.Add(res.Replace(" ","-"));
+                res = Decrypt(res, key);                
+            }            
             return res;
         }
         public double Entropy(string s)
@@ -82,7 +114,7 @@ namespace SAprioriModel
                 }
             }
             else
-            {
+            {                
                 if (mode ==HiddenMode.Random)
                 {
                     Random rd = new Random();

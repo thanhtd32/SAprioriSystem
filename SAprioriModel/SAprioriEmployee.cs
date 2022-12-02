@@ -14,7 +14,7 @@ namespace SAprioriModel
     /// </summary>
     public class SAprioriEmployee
     {
-        public int EmployeeID { get; set; }
+        public string EmployeeID { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }

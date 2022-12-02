@@ -9,6 +9,12 @@ namespace SAprioriModel
 {
     public abstract class Secret
     {
+        protected Dictionary<int, int> numbers = new Dictionary<int, int>() {
+            { 8,0 }, { 9,1 },{ 0,2 },
+            { 1, 3 },{ 2, 4 },{ 3, 5 },
+            { 4, 6 },{ 5, 7 },{ 6, 8 },{ 7, 9 }
+        };
+        public List<string> SecurityLoops=new List<string>();
         /**
          * This function use to encrypt the text with key follow the Vigenere Cipher algorithm 
          * @param text
@@ -47,7 +53,19 @@ namespace SAprioriModel
         {
             return (a % b + b) % b;
         }
-
+        public String encrypt2(String originalText, String key)
+        {
+            String res = "";
+            key = ExpandedKey(originalText,key);
+            for (int i = 0, j = 0; i < originalText.Length; i++)
+            {
+                int c = originalText[i];
+                int k = key[j] - 65;
+                res += (char)(c + k);
+                j = ++j % key.Length;
+            }
+            return res;
+        }
         public string Cipher(string input, string key, bool encipher)
         {
             for (int i = 0; i < key.Length; ++i)
