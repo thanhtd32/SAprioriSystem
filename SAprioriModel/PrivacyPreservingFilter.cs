@@ -10,15 +10,41 @@ namespace SAprioriModel
     {
         ThanhAndHuhCryptography ThanhAndHuhCryptography = new ThanhAndHuhCryptography();
         string KEY = "SERECT";
+        public void DataPrivacy(Object obj, string[] features)
+        {
+            foreach (var prop in obj.GetType().GetProperties())
+            {
+                if (features.Contains(prop.Name))
+                {
+                    string original = null;
+                    if (prop.GetValue(obj, null) != null)
+                    {
+                        original = prop.GetValue(obj, null).ToString();
+                        if(original.Trim() != "")
+                        {
+                            string encryptedProp = ThanhAndHuhCryptography.Encrypt(original,KEY);
+                            prop.SetValue(obj, encryptedProp);
+                        }                            
+                    }
+                }
+            }
+        }
         public void CustomerDataPrivacy(SAprioriCustomer customer, string[] features)
         {            
             foreach (var prop in customer.GetType().GetProperties())
             {
                 if (features.Contains(prop.Name))
                 {
-                    string original = prop.GetValue(customer, null).ToString();
-                    string encryptedProp = ThanhAndHuhCryptography.Encrypt(KEY, original);
-                    prop.SetValue(customer, encryptedProp);
+                    string original = "";
+                    if (prop.GetValue(customer, null) != null)
+                    {
+                        original = prop.GetValue(customer, null).ToString();
+                        if(original.Trim()!="")
+                        {
+                            string encryptedProp = ThanhAndHuhCryptography.Encrypt(original,KEY);
+                            prop.SetValue(customer, encryptedProp);
+                        }                        
+                    }
                 }
             }            
         }
@@ -39,9 +65,16 @@ namespace SAprioriModel
             {
                 if (features.Contains(prop.Name))
                 {
-                    string original = prop.GetValue(order, null).ToString();
-                    string encryptedProp = ThanhAndHuhCryptography.Encrypt(KEY, original);
-                    prop.SetValue(order, encryptedProp);
+                    string original = "";
+                    if (prop.GetValue(order, null) != null)
+                    {
+                        original = prop.GetValue(order, null).ToString();
+                        if(original.Trim()!="")
+                        {
+                            string encryptedProp = ThanhAndHuhCryptography.Encrypt(original,KEY);
+                            prop.SetValue(order, encryptedProp);
+                        }                        
+                    }
                 }
             }
             CustomerTransactionPrivacy(order.OrderDetails, features);
@@ -59,9 +92,16 @@ namespace SAprioriModel
             {
                 if (features.Contains(prop.Name))
                 {
-                    string original = prop.GetValue(orderDetail, null).ToString();
-                    string encryptedProp = ThanhAndHuhCryptography.Encrypt(KEY, original);
-                    prop.SetValue(orderDetail, encryptedProp);
+                    string original = "";
+                    if (prop.GetValue(orderDetail, null) != null)
+                    {
+                        original = prop.GetValue(orderDetail, null).ToString();
+                        if(original.Trim()!="")
+                        {
+                            string encryptedProp = ThanhAndHuhCryptography.Encrypt(original,KEY);
+                            prop.SetValue(orderDetail, encryptedProp);
+                        }                        
+                    }
                 }
             }
         }
